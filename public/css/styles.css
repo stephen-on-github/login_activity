@@ -1,0 +1,4 @@
+/* Ensure icons within controls are highlighted, when the control is focused.  */
+.control.has-icons-left :focus .icon {
+    color: #4a4a4a;
+}

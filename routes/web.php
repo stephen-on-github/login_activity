@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Main page for the app. Display the login activity chart.
+Route::get('/', 'siteController@loginActivity')->name('loginActivity');
+
+// API URL for fetching login activity data.
+Route::get('/api/logins', 'siteController@loginActivityApi')->name('loginActivityApi');
