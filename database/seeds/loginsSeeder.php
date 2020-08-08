@@ -9,18 +9,18 @@ class loginsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     * Run this to add 20,000 random login records. This can be run multiple times.
+     * Run this to add 100,000 random login records. This can be run multiple times.
      *
      * @return void
      */
     public function run()
     {
-        $loginData = [];
         $location = new Location();
 
-        // Insert 2000 records at a time. Insert 10 times.
+        // Insert 10,000 records at a time. Insert 10 times.
         for ($i = 0; $i < 10; $i++) {
-            for ($j = 0; $j < 2000; $j++) {
+            $loginData = [];
+            for ($j = 0; $j < 10000; $j++) {
                 $loginData[] = [
                     // Won't bias user IDs for now.
                     'user_id' => rand(1, 100),
