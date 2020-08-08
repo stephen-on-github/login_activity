@@ -1,3 +1,6 @@
+/*------------------------------------*\
+ # Graph
+\*------------------------------------*/
 /**
  * Graph object
  *
@@ -100,6 +103,35 @@ class Mtx_graph
     // Draw the graph, with the existing filters applied
     graph.filter();
 })();
+
+
+
+
+/*------------------------------------*\
+ # General UI
+\*------------------------------------*/
+// Expand collapse dropdowns, when clicked on.
+Array.from(document.getElementsByClassName('dropdown')).forEach(dropdown => {
+    dropdown.addEventListener('click', function() {
+        dropdown.classList.toggle('is-active');
+    });
+});
+
+// Collapse dropdowns, when clicked away from
+window.addEventListener('click', function(ev) {
+    // Don't do anything if the clicked element is inside a dropdown
+    let element = ev.target;
+    while (element = element.parentNode) {
+        if (element.classList && element.classList.contains('dropdown')) {
+            return false;
+        }
+    }
+
+    // Otherwise dismiss all open dropdowns
+    Array.from(document.getElementsByClassName('dropdown')).forEach(dropdown => {
+        dropdown.classList.remove('is-active');
+    });
+});
 
 
 // Initialise date-range pickers

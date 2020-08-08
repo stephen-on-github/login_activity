@@ -32,11 +32,11 @@ class Login extends Model
         }
 
         if (!empty($args['start_date'])) {
-            $query->where('time', '>=', $args['start_date'] . '00:00:00');
+            $query->where('time', '>=', $args['start_date'] . ' 00:00:00');
         }
 
         if (!empty($args['end_date'])) {
-            $query->where('time', '<=', $args['end_date'] . '23:59:59');
+            $query->where('time', '<=', $args['end_date'] . ' 23:59:59');
         }
 
         return $query;

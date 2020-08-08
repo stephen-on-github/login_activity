@@ -2,3 +2,55 @@
 .control.has-icons-left :focus .icon {
     color: #4a4a4a;
 }
+
+.label {
+    font-weight: 500;
+}
+
+/* Multiselect dropdown */
+.control .dropdown {
+    cursor: pointer;
+    width: 100%;
+}
+
+.control .dropdown-trigger {
+    width: 100%;
+}
+
+/* Stylised checkboxes */
+.checkbox-has-helper [type="checkbox"] {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+}
+
+[type="checkbox"] ~ .checkbox-helper {
+    color: #3273dc;
+    border: 1px solid #dbdbdb;
+    display: inline-block;
+    margin-right: .25em;
+    position: relative;
+    top: .125em;
+    width: 1em;
+    height: 1em;
+}
+
+[type="checkbox"]:checked ~ .checkbox-helper:after {
+    content: '\f00c';
+    font-family: fontAwesome;
+    font-size: .8em;
+    position: absolute;
+    top: -.125em;
+    left: .125em;
+}
+
+[type="checkbox"]:focus ~ .checkbox-helper {
+    border-color: #3273dc;
+    box-shadow: 0 0 0 0.125em rgba(50, 115, 220, .25);
+}
+
+[type="checkbox"]:disabled ~ .checkbox-helper {
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    color: #7a7a7a;
+}
