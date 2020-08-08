@@ -27,6 +27,8 @@
                     @slot('id', 'login-activity-daterange')
                     @slot('label', 'Date range')
                     @slot('name', 'date')
+                    @slot('startDate', $startDate)
+                    @slot('endDate', $endDate)
                 @endcomponent
             </div>
 
@@ -34,6 +36,7 @@
             <div class="column is-12-mobile is-3-tablet">
                 @component('components.form.select')
                     @slot('class', 'login-activity-filter')
+                    @slot('default', false)
                     @slot('id', 'login-activity-interval')
                     @slot('label', 'Interval')
                     @slot('name', 'interval')

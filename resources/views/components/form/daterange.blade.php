@@ -7,22 +7,42 @@
     <div class="control has-icons-left">
         {{-- Hidden fields, with the dates in ISO format --}}
         <input
-            type="hidden" {!! isset($name) ? 'name="start_' . $name . '"' : '' !!}
-            class=" {{ $hiddenClass ?? '' }}"
+            type="hidden"
+            @if (!empty($name))
+                name="start_{{ $name }}"
+            @endif
+            value="{{ $startDate ?? '' }}"
+
+            @if (!empty($hiddenClass))
+                class=" {{ $hiddenClass }}"
+            @endif
             id="{{ $id }}-start"
         />
         <input
-            type="hidden" {!! isset($name) ? 'name="end_'   . $name . '"' : '' !!}
-            class=" {{ $hiddenClass ?? '' }}"
+            type="hidden"
+            @if (!empty($name))
+                name="end_{{ $name }}"
+            @endif
+            value="{{ $endDate ?? '' }}"
+
+            @if (!empty($hiddenClass))
+                class=" {{ $hiddenClass }}"
+            @endif
             id="{{ $id }}-end"
         />
 
         {{-- Visual field, with the dates in a pretty format --}}
         <input
             type="text"
-            {{ isset($name) ? 'name="' . $name . '"' : '' }}
-            id="{{ $id }}"
+            @if (!empty($name))
+                name="{{ $name }}"
+            @endif
+
+            value="{{ $startDate ? date('j F Y', strtotime($startDate)) : '' }}
+                {{ $endDate ? ' - ' . date('j F Y', strtotime($endDate)) : '' }}"
+
             class="input daterangepicker is-fullwidth {{ $class ?? '' }}"
+            id="{{ $id }}"
         />
 
         {{-- Icon will be a calendar, unless deliberately suppressed or a different icon chosen --}}

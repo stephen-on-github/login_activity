@@ -87,7 +87,7 @@ class Login extends Model
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @return array - list of locations for the keys and a list of data points for the graph.
      */
-    public function scopeGetGoogleChartData($query)
+    public function scopeToGoogleChartData($query)
     {
         $results = $query->get();
 

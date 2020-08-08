@@ -79,7 +79,7 @@ class Mtx_graph
             width: '100%',
             height: 500,
             axes: {
-                x: { 0: {side: 'top' } }
+                x: { 0: {side: 'bottom' } }
             },
             vAxes: {
                 0: { title: 'Logins' }
